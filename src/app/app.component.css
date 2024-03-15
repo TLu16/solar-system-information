@@ -1,0 +1,31 @@
+#bg {
+    background-image: url(../assets/milchstrasse-full.png);
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .title {
+    color: white;
+    margin: 0; 
+    font-size: 3em; 
+    font-weight: bold;  
+  }
+
+  .container {
+    padding-left: 10%;
+    padding-top: 5%;
+  }
+
+  nav {
+    padding-top: 20px;
+  }
+
+  a {
+    padding-right: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }

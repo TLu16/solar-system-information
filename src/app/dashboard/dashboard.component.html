@@ -1,0 +1,14 @@
+<div class="container">    
+    <a *ngFor="let planet of planets" routerLink="/detailPlanet/{{planet.id}}" class="imageContainer">
+        <div class="image">
+            <div class="imageTitle">{{planet.name}}</div>
+            <img src={{planet.url}} alt={{planet.name}}>
+        </div>
+    </a>
+    <a routerLink="/detailMoon/{{moon.id}}" class="imageContainer">
+        <div class="image">
+            <div class="imageTitle">{{moon.name}}</div>
+            <img src="{{moon.url}}" alt="{{moon.name}}">
+        </div>
+    </a>
+</div>
