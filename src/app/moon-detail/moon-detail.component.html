@@ -5,6 +5,11 @@
             <div class="title">Durchmesser: <span>{{moon.diameter}} Km</span></div>
             <div class="title">Distanz zum Planeten: <span>{{moon.distanceToPlanet}} Km</span></div>
             <div class="title">Heimatplanet: <span>{{moon.motherPlanet}}</span></div>
+            <div *ngIf="planet">
+                <a routerLink="/detailPlanet/{{planet.id}}">
+                    <span class="badge">{{planet.id}}</span> <span class="name">{{planet.name}}</span>
+                </a>
+            </div>
         </div>
         <div class="w">
             <img src={{moon.url}} alt={{moon.name}}>    

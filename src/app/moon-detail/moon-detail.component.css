@@ -8,8 +8,9 @@ h1 {
     margin-left: 5%;
 }
 
-p, div, h2 {
+* {
     color: white;
+    text-decoration: none; 
 }
 
 img {
@@ -23,4 +24,23 @@ span {
 
 .title {
     margin-bottom: 20px;
+}
+
+.name, .badge {
+    font-weight: bold;
+    border-radius: 0 10px 10px 0;
+    padding: 3px 8px 3px 10px;
+    border: 2px solid #3498db;
+    text-align: center;
+}
+
+.badge {
+    background-color: #3498db;    
+    border-radius: 10px 0 0 10px;
+}
+
+.name {   
+    display: inline-block;   
+    border-style: solid solid solid none;   
+    width: 100px;
 }

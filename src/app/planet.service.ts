@@ -27,9 +27,14 @@ export class PlanetService {
     return moons
   }
 
-  getPlanetByName(name: string): Planet | null {
+  searchPlanetByName(name: string): Planet | null {
     const planet = PLANETS.find(p => p.name.toLowerCase() === name.toLowerCase());
     return planet ? planet : null;
-}
+  }
+
+  getPlanetByName(name: string): Planet {
+    const planet = PLANETS.find(p => p.name.toLowerCase() === name.toLowerCase())!
+    return planet;
+  }
 
 }

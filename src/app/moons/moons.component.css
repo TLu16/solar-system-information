@@ -4,8 +4,8 @@ a {
 }
 
 ul {
-    margin-top: 50px;
     margin-left: 3%;
+    list-style: none;
 }
 
 li {
