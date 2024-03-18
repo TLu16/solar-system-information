@@ -5,5 +5,6 @@ export interface Moon {
     name: string,
     diameter: number,
     url: string,
-    motherPlanet?: string
+    motherPlanet?: string,
+    distanceToPlanet: number
 }

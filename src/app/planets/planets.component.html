@@ -1,9 +1,7 @@
-<p>planets works!</p>
-
 <ul>
     <li *ngFor="let planet of planets">
         <a routerLink="/detailPlanet/{{planet.id}}">
-            <span class="badge">{{planet.id}}</span> {{planet.name}}
+            <span class="badge">{{planet.id}}</span> <span class="name">{{planet.name}}</span>
         </a>
     </li>
 </ul>

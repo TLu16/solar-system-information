@@ -1,7 +1,20 @@
-
-
 <div *ngIf="planet">
-    <h2>{{planet.name}}</h2>
-    <div>Durchmesser: {{planet.diameter}} Km</div>
-    <img src={{planet.url}} alt={{planet.name}}>
+    <h1>{{planet.name}}</h1>
+    <div class="container">
+        <div class="w">
+            <div class="title">Durchmesser: <span>{{planet.diameter}} Km</span></div>
+            <div class="title">Distanz zur Sonne: <span>{{planet.distanceToSun}} Mio Km</span></div>
+            <div class="title">Anzahl Monde: <span>{{planet.numberOfMoons}}</span></div>
+            <ul>
+                <li *ngFor="let moon of moons">
+                    <a routerLink="/detailMoon/{{moon.id}}">
+                        <span class="badge">{{moon.id}}</span> <span class="name">{{moon.name}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="w">
+            <img src={{planet.url}} alt={{planet.name}}>    
+        </div>
+    </div>
 </div>

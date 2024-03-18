@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Planet } from './planet';
 import { PLANETS } from './mock-planets';
 import { Observable, of } from 'rxjs';
+import { Moon } from './moon';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,15 @@ export class PlanetService {
     const planet = PLANETS.find(p => p.id === id)!
     return of(planet)
   }
+
+  getMoons(planet: Planet): Moon[] {
+    const moons = planet.moons?.filter(m => m.motherPlanet == planet.name)!
+    return moons
+  }
+
+  getPlanetByName(name: string): Planet | null {
+    const planet = PLANETS.find(p => p.name.toLowerCase() === name.toLowerCase());
+    return planet ? planet : null;
+}
+
 }

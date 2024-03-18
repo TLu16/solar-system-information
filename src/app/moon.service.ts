@@ -19,4 +19,10 @@ export class MoonService {
     const moon = MOONS.find(m => m.id === id)!
     return of(moon)
   }
+
+  getMoonByName(name: string): Moon | null {
+    const moon = MOONS.find(m => m.name.toLowerCase() === name.toLowerCase());
+    return moon ? moon : null;
+  }
+
 }

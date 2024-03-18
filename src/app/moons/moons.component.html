@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let moon of moons">
+        <a routerLink="/detailMoon/{{moon.id}}">
+            <span class="badge">{{moon.id}}</span> <span class="name">{{moon.name}}</span>
+        </a>
+    </li>
+</ul>

@@ -1,5 +1,13 @@
 <div *ngIf="moon">
-    <h2>{{moon.name}}</h2>
-    <div>Durchmesser: {{moon.diameter}} Km</div>
-    <img src={{moon.url}} alt={{moon.name}}>
+    <h1>{{moon.name}}</h1>
+    <div class="container">
+        <div class="w">
+            <div class="title">Durchmesser: <span>{{moon.diameter}} Km</span></div>
+            <div class="title">Distanz zum Planeten: <span>{{moon.distanceToPlanet}} Km</span></div>
+            <div class="title">Heimatplanet: <span>{{moon.motherPlanet}}</span></div>
+        </div>
+        <div class="w">
+            <img src={{moon.url}} alt={{moon.name}}>    
+        </div>
+    </div>
 </div>

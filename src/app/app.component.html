@@ -1,10 +1,27 @@
 <div id="bg">
+  <div class="title">{{title}}</div>
   <div class="container">
-    <div class="title">{{title}}</div>
     <nav>
       <a routerLink="/dashboard">Dashboard</a>
       <a routerLink="/planets">Planeten</a>
+      <a routerLink="/moons">Monde</a>
     </nav>
-    <router-outlet></router-outlet>
+    <div class="search">
+      <label for="name">Planet:</label>
+      <input id="name" [(ngModel)]="planetName" (keyup.enter)="planetNameLink()" placeholder="Planet">
+      <div *ngIf="planetNotFound" class="message">
+        <p>Der gesuchte Planet wurde nicht gefunden.</p>
+      </div>
+      
+    </div>
+    <div class="search">
+      <label for="name">Mond:</label>
+      <input id="name" [(ngModel)]="moonName" (keyup.enter)="moonNameLink()" placeholder="Mond">
+      <div *ngIf="moonNotFound" class="message">
+        <p>Der gesuchte Mond wurde nicht gefunden.</p>
+      </div>
+    </div>
   </div>
+  <div class="border"></div>
+  <router-outlet></router-outlet>
 </div>

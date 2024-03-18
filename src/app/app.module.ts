@@ -7,6 +7,8 @@ import { PlanetsComponent } from './planets/planets.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 import { MoonDetailComponent } from './moon-detail/moon-detail.component';
+import { MoonsComponent } from './moons/moons.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { MoonDetailComponent } from './moon-detail/moon-detail.component';
     PlanetsComponent,
     DashboardComponent,
     PlanetDetailComponent,
-    MoonDetailComponent
+    MoonDetailComponent,
+    MoonsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
