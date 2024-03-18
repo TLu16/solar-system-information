@@ -2,30 +2,32 @@
   <div class="title">{{title}}</div>
   <div class="container">
     <nav>
-      <a routerLink="/dashboard">Dashboard</a>
-      <a routerLink="/planets">Planeten</a>
-      <a routerLink="/moons">Monde</a>
+      <a routerLink="/dashboard" (click)="onInputChange()">Dashboard</a>
+      <a routerLink="/planets" (click)="onInputChange()">Planeten</a>
+      <a routerLink="/moons" (click)="onInputChange()">Monde</a>
     </nav>
     <div class="search">
       <div class="input-serach">
         <div>
           <label for="name">Planet:</label>
         </div>
-        <input id="name" [(ngModel)]="planetName" (keyup.enter)="planetNameLink()" placeholder="Planet">
-        <div *ngIf="planetNotFound" class="message">
-          <p>Der gesuchte Planet wurde nicht gefunden.</p>
-        </div>
+        <input id="name" [(ngModel)]="planetName" (keyup.enter)="planetNameLink()" (ngModelChange)="onInputChange()" placeholder="Planet">
+        
       </div>
       <div class="input-serach">
         <div>
           <label for="name">Mond:</label>
         </div>
-        <input id="name" [(ngModel)]="moonName" (keyup.enter)="moonNameLink()" placeholder="Mond">
-        <div *ngIf="moonNotFound" class="message">
-          <p>Der gesuchte Mond wurde nicht gefunden.</p>
-        </div>
+        <input id="name" [(ngModel)]="moonName"  (keyup.enter)="moonNameLink()" (ngModelChange)="onInputChange()" placeholder="Mond">
+        
       </div>
     </div>
+  </div>
+  <div *ngIf="planetNotFound" class="message">
+    <p>Der gesuchte Planet <span>{{wrongName}}</span> wurde nicht gefunden.</p>
+  </div>
+  <div *ngIf="moonNotFound" class="message">
+    <p>Der gesuchte Mond <span>{{wrongName}}</span> wurde nicht gefunden.</p>
   </div>
   <div class="border"></div>
   <router-outlet></router-outlet>

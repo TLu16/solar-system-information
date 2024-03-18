@@ -22,6 +22,7 @@ img {
 .container {
     display: flex;
     padding-top: 100px;
+    margin-left: 5%;
 }
 
 

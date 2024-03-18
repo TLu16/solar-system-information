@@ -3,7 +3,7 @@ import { Moon } from './moon';
 import { Planet } from './planet';
 import { PlanetService } from './planet.service';
 import { MoonService } from './moon.service';
-import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -22,14 +22,14 @@ export class AppComponent {
   moons: Moon[] = []
   planetName: string = ""
   moonName: string = ""
+  wrongName: string = ""
   planetNotFound: boolean = false
   moonNotFound: boolean = false
 
 constructor(
   private planetService: PlanetService,
   private moonService: MoonService,
-  private router: Router, 
-  private route: ActivatedRoute) {}
+  private router: Router) {}
 
   ngOnInit(): void {
     this.getPlanets()
@@ -46,16 +46,17 @@ constructor(
 
   planetNameLink(): void {
     let planet = this.planetService.searchPlanetByName(this.planetName)
+    
     if (planet) {
-      this.planetNotFound = false
+     
 
       this.router.routeReuseStrategy.shouldReuseRoute = () => false
       this.router.onSameUrlNavigation = 'reload'
-      this.router.navigate(['/detailMoon/', planet.id], {relativeTo: this.route})
+      this.router.navigate(['/detailPlanet/', planet.id])
 
-      this.router.navigate(['/detailPlanet/', planet.id],)
       this.planetName = ""
     } else {
+      this.wrongName = this.planetName
       this.planetName = ""
       this.planetNotFound = true;
     }
@@ -63,18 +64,25 @@ constructor(
 
   moonNameLink(): void {
     let moon = this.moonService.getMoonByName(this.moonName)
+    
     if (moon) {
-      this.moonNotFound = false
+      
 
       this.router.routeReuseStrategy.shouldReuseRoute = () => false
       this.router.onSameUrlNavigation = 'reload'
-      this.router.navigate(['/detailMoon/', moon.id], {relativeTo: this.route})
-      
-      this.planetName = ""
+      this.router.navigate(['/detailMoon/', moon.id])
+
+      this.moonName = ""
     } else {
+      this.wrongName = this.moonName
       this.moonName = ""
       this.moonNotFound = true;
     }
   }
+
+  onInputChange() {
+    this.planetNotFound = false
+    this.moonNotFound = false
+    }
 
 }
