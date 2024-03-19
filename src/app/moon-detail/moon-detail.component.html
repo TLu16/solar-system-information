@@ -1,7 +1,8 @@
 <div *ngIf="moon">
-    <h1>{{moon.name}}</h1>
     <div class="container">
         <div class="w">
+            <div>{{moon.name}}</div>
+            <hr>
             <div class="title">Durchmesser: <span>{{moon.diameter}} Km</span></div>
             <div class="title">Distanz zum Planeten: <span>{{moon.distanceToPlanet}} Km</span></div>
             <div class="title">Heimatplanet: <span>{{moon.motherPlanet}}</span></div>

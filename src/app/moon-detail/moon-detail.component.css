@@ -1,10 +1,16 @@
-h1 {
+.w > div:first-child {
     margin-left: 20%;
-    margin-bottom: 60px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+hr + .title {
+    margin-top: 30px;
 }
 
 .container {
     display: flex;
+    margin-top: 30px;
     margin-left: 5%;
 }
 
@@ -14,8 +20,10 @@ h1 {
 }
 
 img {
-    width: 400px;
-    height: auto;
+    margin-left: 100px;
+    margin-top: 15px;
+    height: 500px;
+    width: auto;
 }
 
 span {

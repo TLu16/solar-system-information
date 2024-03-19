@@ -33,7 +33,7 @@ export const PLANETS: Planet[] = [
     { id: 5, 
         name: "Mars", 
         diameter: 6779, 
-        url: "../assets/Mars.png",
+        url: "../assets/Mars1.png",
         distanceToSun: 228,
         numberOfMoons: 2,
         moons: [MOONS[1], MOONS[2]] 

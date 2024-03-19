@@ -3,7 +3,6 @@ import { Planet } from '../planet';
 import { PlanetService } from '../planet.service';
 import { ActivatedRoute } from '@angular/router';
 import { Moon } from '../moon';
-import { MoonService } from '../moon.service';
 
 @Component({
   selector: 'app-planet-detail',
@@ -16,8 +15,7 @@ export class PlanetDetailComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private planetService: PlanetService,
-    private moonService: MoonService
+    private planetService: PlanetService
   ) {}
 
   ngOnInit(): void {

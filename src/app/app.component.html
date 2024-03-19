@@ -24,11 +24,12 @@
     </div>
   </div>
   <div *ngIf="planetNotFound" class="message">
-    <p>Der gesuchte Planet <span>{{wrongName}}</span> wurde nicht gefunden.</p>
+    <p>Der gesuchte Planet <span class="error">{{wrongName}}</span> wurde nicht gefunden.</p>
   </div>
   <div *ngIf="moonNotFound" class="message">
-    <p>Der gesuchte Mond <span>{{wrongName}}</span> wurde nicht gefunden.</p>
+    <p>Der gesuchte Mond <span class="error">{{wrongName}}</span> wurde nicht gefunden.</p>
   </div>
   <div class="border"></div>
   <router-outlet></router-outlet>
 </div>
+<div id="bg"></div>

@@ -48,8 +48,6 @@ constructor(
     let planet = this.planetService.searchPlanetByName(this.planetName)
     
     if (planet) {
-     
-
       this.router.routeReuseStrategy.shouldReuseRoute = () => false
       this.router.onSameUrlNavigation = 'reload'
       this.router.navigate(['/detailPlanet/', planet.id])
@@ -66,8 +64,6 @@ constructor(
     let moon = this.moonService.getMoonByName(this.moonName)
     
     if (moon) {
-      
-
       this.router.routeReuseStrategy.shouldReuseRoute = () => false
       this.router.onSameUrlNavigation = 'reload'
       this.router.navigate(['/detailMoon/', moon.id])
